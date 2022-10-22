@@ -218,11 +218,11 @@ class EditableText{
         });
 
         function clickSaveButton(event, object){
-            // Number 13 is the "Enter" key on the keyboard
+            // 13 é enter 
             if (event.keyCode === 13) {
-                // Cancel the default action, if needed
+                // cancelar ação
                 event.preventDefault();
-                // Trigger the button element with a click
+                // setar botão ao clicar
                 object.saveButton.click();
               }
         }
