@@ -1,40 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YourTeam</title>
-    <link rel="stylesheet" href="styles.css" />
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>YouR TeaM - Gerencie sua Equipe de E-sports</title>
   </head>
 
   <body>
-    <header>
-      <nav>
-        <a class="logo" href="index.html">YourTeam</a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-          <li><a href="./cronograma.html">Cronograma</a></li>
-          <li><a href="#">Equipe</a></li>
-          <li><a href="#">Metas</a></li>
-          <li><a href="#">Seja Premium</a></li>
-          <li><a href="#">Conta</a></li>
-        </ul>
-      </nav>
-    </header>
+    <nav class="navigation">
+      <a href="index.html" class="logo">Y<span>ou</span>R T<span>ea</span>M</a>
+      <ul class="nav-menu">
+          <li class="nav-item"><a href="cronograma.html">Cronograma</a></li>
+          <li class="nav-item"><a href="#">Equipe</a></li>
+          <li class="nav-item"><a href="#">Metas</a></li>
+          <li class="nav-item"><a href="#">Seja Premium</a></li>
+          <li class="nav-item"><a href="#">Conta</a></li>
+      </ul>
+      <div class="menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+  </nav>
+</header>
     <main>
-      <div class="addTodoListDiv">
-        <input id="addTodoListInput" class="comment">
-        <button id="addTodoListButton" class="btn-save">Adicionar novo evento</button>
-    </div>
-    <div id="root"></div>
-  </body>    
-  <script src="cronograma_script.js"></script>
-    </main>
-    <script src="mobile-navbar.js"></script>
-  </body>
+      <section class="homeCronograma">
+        <div class="home-text">
+          <h4 class="text-h4"> ⠀⠀⠀⠀⠀⠀⠀⠀⠀</h4>
+            <h1 class="text-h1">Cronograma</h4>
+              <p>Adicione no cronograma do YouR TeaM, eventos que sua equipe de E-sports está envolvida, como Campeonatos, Treinos, WorkShops e muito mais! Insira um evento abaixo com sua descrição e horário em que ocorrerá. </p>
+            </div>
+    </section>
+            <div class="addTodoListDiv">
+              <input id="addTodoListInput" class="comment">
+              <button id="addTodoListButton" class="btn-save">Adicionar novo evento</button>
+            </div>
+        <div id="rooting"></div> 
+            <script src="cronograma_script.js"></script>
+         </div>
+</main>
+<script src="script.js"></script>
+</body>
 </html>

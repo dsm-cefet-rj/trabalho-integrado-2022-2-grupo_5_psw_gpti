@@ -1,4 +1,4 @@
-let root = document.getElementById("root");
+let rooting = document.getElementById("rooting");
 
 
 class todoList{
@@ -99,7 +99,7 @@ class Card{
     showMenu(){
 
         
-        this.menu = document.createElement("div");
+        this.menuCronograma = document.createElement("div");
         this.menuContainer = document.createElement("div");
         this.menuTitle = document.createElement("div");
         this.menuDescription = document.createElement("div");
@@ -109,7 +109,7 @@ class Card{
         this.timeInputInicio = document.createElement("input");
         this.timeInputFim = document.createElement("input");
         
-        this.menu.className = "menu";
+        this.menuCronograma.className = "menuCronograma";
         this.menuContainer.className = "menuContainer";
         this.menuTitle.className = "menuTitle";
         this.menuDescription.className = "menuDescription";
@@ -141,15 +141,15 @@ class Card{
         this.timeInputFim.setAttribute("type", "time");
 
     
-        this.menu.append(this.menuTitle);
-        this.menu.append(this.menuDescription);
-        this.menu.append(this.commentsInput);
-        this.menu.append(this.timeInputInicio);
-        this.menu.append(this.timeInputFim);
-        this.menu.append(this.commentsButton);
-        this.menu.append(this.menuComments);
-        this.menuContainer.append(this.menu);
-        root.append(this.menuContainer);
+        this.menuCronograma.append(this.menuTitle);
+        this.menuCronograma.append(this.menuDescription);
+        this.menuCronograma.append(this.commentsInput);
+        this.menuCronograma.append(this.timeInputInicio);
+        this.menuCronograma.append(this.timeInputFim);
+        this.menuCronograma.append(this.commentsButton);
+        this.menuCronograma.append(this.menuComments);
+        this.menuContainer.append(this.menuCronograma);
+        rooting.append(this.menuContainer);
 
         this.editableDescription = new EditableText(this.state.description, this.menuDescription, this, "description", "textarea");
         this.editableTitle = new EditableText(this.state.text, this.menuTitle, this, "text", "input");
@@ -268,7 +268,7 @@ let addTodoListButton = document.getElementById("addTodoListButton");
 
 addTodoListButton.addEventListener('click',()=>{
    if ( addTodoListInput.value.trim() != ""){
-    new todoList(root, addTodoListInput.value);
+    new todoList(rooting, addTodoListInput.value);
     addTodoListInput.value = "";
    }
 });
