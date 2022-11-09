@@ -1,276 +1,270 @@
 let rooting = document.getElementById("rooting");
 
+class todoList {
+  constructor(place, title = "Treinos") {
+    this.place = place;
+    this.title = title;
+    this.cardArray = [];
 
-class todoList{
-    constructor(place, title = "Treinos"){
+    this.render();
+  }
 
-        this.place = place;
-        this.title = title;
-        this.cardArray = [];
+  addToDo() {
+    let text = this.input.value;
+    this.cardArray.push(new Card(text, this.div, this));
+  }
 
-        this.render();
-    }
+  render() {
+    this.createToDoListElement();
+    this.place.append(this.todoListElement);
+  }
 
-    addToDo(){
-        let text = this.input.value;
-        this.cardArray.push(new Card(text, this.div, this));
-    }
+  createToDoListElement() {
+    this.h2 = document.createElement("h2");
+    this.h2.innerText = this.title;
+    this.input = document.createElement("input");
+    this.input.classList.add("comment");
+    this.button = document.createElement("button");
+    this.button.innerText = "Adicionar";
+    this.button.classList.add("btn-save");
+    this.button.id = "to-do-list-button";
+    this.div = document.createElement("div");
+    this.todoListElement = document.createElement("div");
 
-    render(){
-        this.createToDoListElement();
-        this.place.append(this.todoListElement);
-    }
+    this.button.addEventListener("click", () => {
+      if (this.input.value != "") {
+        this.addToDo.call(this);
+        this.input.value = "";
+      }
+    });
 
-    createToDoListElement(){
-        
-        this.h2 = document.createElement('h2');
-        this.h2.innerText = this.title;
-        this.input = document.createElement('input');
-        this.input.classList.add("comment");
-        this.button = document.createElement('button');
-        this.button.innerText = 'Adicionar';
-        this.button.classList.add("btn-save");
-        this.button.id = "to-do-list-button";
-        this.div = document.createElement('div');
-        this.todoListElement = document.createElement('div');
-
-        
-        this.button.addEventListener('click', ()=>{
-            if(this.input.value != ""){
-                this.addToDo.call(this);
-                this.input.value = "";
-            }
-        });
-
-        
-        this.todoListElement.append(this.h2);
-        this.todoListElement.append(this.input);
-        this.todoListElement.append(this.button);
-        this.todoListElement.append(this.div);
-        this.todoListElement.classList.add("todoList");
-    }
+    this.todoListElement.append(this.h2);
+    this.todoListElement.append(this.input);
+    this.todoListElement.append(this.button);
+    this.todoListElement.append(this.div);
+    this.todoListElement.classList.add("todoList");
+  }
 }
 
+class Card {
+  constructor(text, place, todoList) {
+    this.place = place;
+    this.todoList = todoList;
+    this.state = {
+      text: text,
+      description: "Descreva a atividade...",
+      comments: [],
+    };
+    this.render();
+  }
 
-class Card{
-    constructor(text, place, todoList){
+  render() {
+    this.card = document.createElement("div");
+    this.card.classList.add("card");
+    this.card.addEventListener("click", (e) => {
+      if (e.target != this.deleteButton) {
+        this.showMenu.call(this);
+      }
+    });
 
-        this.place = place;
-        this.todoList = todoList;
-        this.state = {
-            text: text,
-            description: "Descreva a atividade...",
-            comments: [],
-        }
-        this.render();
-    }
+    this.p = document.createElement("p");
+    this.p.innerText = this.state.text;
 
-    render(){
-        this.card = document.createElement('div');
-        this.card.classList.add("card");
-        this.card.addEventListener('click', (e)=>{
-            if(e.target != this.deleteButton){
-                this.showMenu.call(this);
-            }
-        });
+    this.deleteButton = document.createElement("button");
+    this.deleteButton.innerText = "X";
+    this.deleteButton.addEventListener("click", () => {
+      this.deleteCard.call(this);
+    });
 
-        this.p = document.createElement('p');
-        this.p.innerText = this.state.text;
+    this.card.append(this.p);
+    this.card.append(this.deleteButton);
 
-        this.deleteButton = document.createElement('button');
-        this.deleteButton.innerText = "X";
-        this.deleteButton.addEventListener('click', ()=>{
-            this.deleteCard.call(this);
-        });
+    this.place.append(this.card);
+  }
 
-        this.card.append(this.p);
-        this.card.append(this.deleteButton);
-        
-        this.place.append(this.card);
-    }
+  deleteCard() {
+    this.card.remove();
+    let i = this.todoList.cardArray.indexOf(this);
+    this.todoList.cardArray.splice(i, 1);
+  }
 
-    deleteCard(){
-        this.card.remove();
-        let i = this.todoList.cardArray.indexOf(this);
-        this.todoList.cardArray.splice(i,1);
-    }
+  showMenu() {
+    this.menuCronograma = document.createElement("div");
+    this.menuContainer = document.createElement("div");
+    this.menuTitle = document.createElement("div");
+    this.menuDescription = document.createElement("div");
+    this.commentsInput = document.createElement("input");
+    this.commentsButton = document.createElement("button");
+    this.menuComments = document.createElement("div");
+    this.timeInputInicio = document.createElement("input");
+    this.timeInputFim = document.createElement("input");
 
-    showMenu(){
+    this.menuCronograma.className = "menuCronograma";
+    this.menuContainer.className = "menuContainer";
+    this.menuTitle.className = "menuTitle";
+    this.menuDescription.className = "menuDescription";
+    this.menuComments.className = "menuComments";
+    this.commentsInput.className = "commentsInput comment";
+    this.commentsButton.className = "commentsButton btn-save";
+    this.timeInputInicio.className = "timeInputInicio";
+    this.timeInputFim.className = "timeInputFim";
 
-        
-        this.menuCronograma = document.createElement("div");
-        this.menuContainer = document.createElement("div");
-        this.menuTitle = document.createElement("div");
-        this.menuDescription = document.createElement("div");
-        this.commentsInput = document.createElement("input");
-        this.commentsButton = document.createElement('button');
-        this.menuComments = document.createElement("div");
-        this.timeInputInicio = document.createElement("input");
-        this.timeInputFim = document.createElement("input");
-        
-        this.menuCronograma.className = "menuCronograma";
-        this.menuContainer.className = "menuContainer";
-        this.menuTitle.className = "menuTitle";
-        this.menuDescription.className = "menuDescription";
-        this.menuComments.className = "menuComments";
-        this.commentsInput.className = "commentsInput comment";
-        this.commentsButton.className = "commentsButton btn-save";
-        this.timeInputInicio.className = "timeInputInicio";
-        this.timeInputFim.className = "timeInputFim";
-        
-        this.commentsButton.innerText = "Adicionar";
-        this.commentsInput.placeholder = "Descricao...";
+    this.commentsButton.innerText = "Adicionar";
+    this.commentsInput.placeholder = "Descricao...";
 
-        
-        this.menuContainer.addEventListener('click', (e)=>{
-            console.log(e.target);
-            if(e.target.classList.contains("menuContainer")){
-                this.menuContainer.remove();
-            }
-        });
-        
-        this.commentsButton.addEventListener('click', ()=>{
-            if(this.commentsInput.value != ""){
-            this.state.comments.push(this.commentsInput.value);
-            this.renderComments();
-            this.commentsInput.value = "";
-            }
-        })
-        this.timeInputInicio.setAttribute("type", "time");
-        this.timeInputFim.setAttribute("type", "time");
+    this.menuContainer.addEventListener("click", (e) => {
+      console.log(e.target);
+      if (e.target.classList.contains("menuContainer")) {
+        this.menuContainer.remove();
+      }
+    });
 
-    
-        this.menuCronograma.append(this.menuTitle);
-        this.menuCronograma.append(this.menuDescription);
-        this.menuCronograma.append(this.commentsInput);
-        this.menuCronograma.append(this.timeInputInicio);
-        this.menuCronograma.append(this.timeInputFim);
-        this.menuCronograma.append(this.commentsButton);
-        this.menuCronograma.append(this.menuComments);
-        this.menuContainer.append(this.menuCronograma);
-        rooting.append(this.menuContainer);
-
-        this.editableDescription = new EditableText(this.state.description, this.menuDescription, this, "description", "textarea");
-        this.editableTitle = new EditableText(this.state.text, this.menuTitle, this, "text", "input");
-        
+    this.commentsButton.addEventListener("click", () => {
+      if (this.commentsInput.value != "") {
+        this.state.comments.push(this.commentsInput.value);
         this.renderComments();
-    }
+        this.commentsInput.value = "";
+      }
+    });
+    this.timeInputInicio.setAttribute("type", "time");
+    this.timeInputFim.setAttribute("type", "time");
 
-    renderComments(){
+    this.menuCronograma.append(this.menuTitle);
+    this.menuCronograma.append(this.menuDescription);
+    this.menuCronograma.append(this.commentsInput);
+    this.menuCronograma.append(this.timeInputInicio);
+    this.menuCronograma.append(this.timeInputFim);
+    this.menuCronograma.append(this.commentsButton);
+    this.menuCronograma.append(this.menuComments);
+    this.menuContainer.append(this.menuCronograma);
+    rooting.append(this.menuContainer);
 
-        let currentCommentsDOM = Array.from(this.menuComments.childNodes);
+    this.editableDescription = new EditableText(
+      this.state.description,
+      this.menuDescription,
+      this,
+      "description",
+      "textarea"
+    );
+    this.editableTitle = new EditableText(
+      this.state.text,
+      this.menuTitle,
+      this,
+      "text",
+      "input"
+    );
 
-        currentCommentsDOM.forEach(commentDOM =>{
-            commentDOM.remove();
-        });
+    this.renderComments();
+  }
 
-        this.state.comments.forEach(comment =>{
-            new Comment(comment, this.menuComments, this);
-        });
-    }
+  renderComments() {
+    let currentCommentsDOM = Array.from(this.menuComments.childNodes);
+
+    currentCommentsDOM.forEach((commentDOM) => {
+      commentDOM.remove();
+    });
+
+    this.state.comments.forEach((comment) => {
+      new Comment(comment, this.menuComments, this);
+    });
+  }
 }
 
-class EditableText{
-    constructor(text, place, card, property, typeOfInput){
-        this.text = text;
-        this.place = place;
-        this.card = card;
-        this.property = property;
-        this.typeOfInput = typeOfInput;
-        this.render();
+class EditableText {
+  constructor(text, place, card, property, typeOfInput) {
+    this.text = text;
+    this.place = place;
+    this.card = card;
+    this.property = property;
+    this.typeOfInput = typeOfInput;
+    this.render();
+  }
+
+  render() {
+    this.div = document.createElement("div");
+    this.p = document.createElement("p");
+
+    this.p.innerText = this.text;
+
+    this.p.addEventListener("click", () => {
+      this.showEditableTextArea.call(this);
+    });
+
+    this.div.append(this.p);
+    this.place.append(this.div);
+  }
+
+  showEditableTextArea() {
+    let oldText = this.text;
+
+    this.input = document.createElement(this.typeOfInput);
+    this.saveButton = document.createElement("button");
+
+    this.p.remove();
+    this.input.value = oldText;
+    this.saveButton.innerText = "Save";
+    this.saveButton.className = "btn-save";
+    this.input.classList.add("comment");
+
+    this.saveButton.addEventListener("click", () => {
+      this.text = this.input.value;
+      this.card.state[this.property] = this.input.value;
+      if (this.property == "text") {
+        this.card.p.innerText = this.input.value;
+      }
+      this.div.remove();
+      this.render();
+    });
+
+    function clickSaveButton(event, object) {
+      // 13 é enter
+      if (event.keyCode === 13) {
+        // cancelar ação
+        event.preventDefault();
+        // setar botão ao clicar
+        object.saveButton.click();
+      }
     }
 
-    render(){
-        this.div = document.createElement("div");
-        this.p = document.createElement("p");
+    this.input.addEventListener("keyup", (e) => {
+      if (this.typeOfInput == "input") {
+        clickSaveButton(e, this);
+      }
+    });
 
-        this.p.innerText = this.text;
+    this.div.append(this.input);
 
-        this.p.addEventListener('click', ()=>{
-            this.showEditableTextArea.call(this);
-        });
-
-        this.div.append(this.p);
-        this.place.append(this.div);
+    if (this.typeOfInput == "textarea") {
+      this.div.append(this.saveButton);
     }
 
-    showEditableTextArea(){
-        let oldText = this.text;
-
-        this.input = document.createElement(this.typeOfInput);
-        this.saveButton = document.createElement("button");
-
-        this.p.remove();
-        this.input.value = oldText;
-        this.saveButton.innerText = "Save";
-        this.saveButton.className = "btn-save";
-        this.input.classList.add("comment");
-
-        this.saveButton.addEventListener('click', ()=>{
-            this.text = this.input.value;
-            this.card.state[this.property] = this.input.value;
-            if(this.property == "text"){
-                this.card.p.innerText = this.input.value;
-            }
-            this.div.remove();
-            this.render();
-        });
-
-        function clickSaveButton(event, object){
-            // 13 é enter 
-            if (event.keyCode === 13) {
-                // cancelar ação
-                event.preventDefault();
-                // setar botão ao clicar
-                object.saveButton.click();
-              }
-        }
-
-        this.input.addEventListener("keyup", (e)=>{
-            if(this.typeOfInput == "input"){
-                clickSaveButton(e, this);
-            }
-        });
-
-        this.div.append(this.input);
-
-        if(this.typeOfInput == "textarea"){
-            this.div.append(this.saveButton);
-        }
-
-        this.input.select();
-    }
-
+    this.input.select();
+  }
 }
 
-class Comment{
-    constructor(text, place, card){
-        this.text = text;
-        this.place = place;
-        this.card = card;
-        this.render();
-    }
+class Comment {
+  constructor(text, place, card) {
+    this.text = text;
+    this.place = place;
+    this.card = card;
+    this.render();
+  }
 
-    render(){
-        this.div = document.createElement('div');
-        this.div.className = "comment";
-        this.div.innerText = this.text;
-        
-        this.place.append(this.div);
-    }
+  render() {
+    this.div = document.createElement("div");
+    this.div.className = "comment";
+    this.div.innerText = this.text;
+
+    this.place.append(this.div);
+  }
 }
-
-
 
 let addTodoListInput = document.getElementById("addTodoListInput");
 let addTodoListButton = document.getElementById("addTodoListButton");
 
-addTodoListButton.addEventListener('click',()=>{
-   if ( addTodoListInput.value.trim() != ""){
+addTodoListButton.addEventListener("click", () => {
+  if (addTodoListInput.value.trim() != "") {
     new todoList(rooting, addTodoListInput.value);
     addTodoListInput.value = "";
-   }
+  }
 });
-
-
-
