@@ -11,7 +11,6 @@ class todoList{
         this.render();
     }
 
-
     addToDo(){
         let text = this.input.value;
         this.cardArray.push(new Card(text, this.div, this));
