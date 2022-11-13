@@ -1,20 +1,11 @@
 import { useState } from "react";
 import "../styles/navbar.css";
-import "./Cronograma/App-cronograma";
-import "./Cronograma/Board/context"
-import "./Cronograma/Board/index"
-import "./Cronograma/Board/styles"
-import "./Cronograma/Card/index"
-import "./Cronograma/Card/styles"
-import "./Cronograma/Header/index"
-import "./Cronograma/Header/styles"
-import "./Cronograma/List/index"
-import "./Cronograma/List/styles"
+
 export default function Navbar() {
   const[isNavExpanded, setIsNavExpanded] = useState(false)
     return (
       <nav className="navigation">
-        <a href="../App.js" class="logo"><span>Y</span>ou<span>R</span> <span>T</span>ea<span>M</span></a>
+        <a href="/" class="logo"><span>Y</span>ou<span>R</span> <span>T</span>ea<span>M</span></a>
 
         <button
         className="hamburger"
