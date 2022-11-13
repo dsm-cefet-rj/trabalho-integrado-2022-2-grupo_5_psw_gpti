@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/navbar.css";
 
+
 export default function Navbar() {
   const[isNavExpanded, setIsNavExpanded] = useState(false)
     return (
@@ -34,13 +35,13 @@ export default function Navbar() {
       >
           <ul>
             <li>
-              <a href="./Cronograma/App-cronograma">Cronograma</a>
+              <a href="/">Cronograma</a>
             </li>
             <li>
-              <a href="/contact">Equipe</a>
+              <a href="/">Equipe</a>
             </li>
             <li>
-              <a href="/contact">Metas</a>
+              <a href="/">Metas</a>
             </li>
           </ul>
         </div>
