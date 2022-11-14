@@ -35,13 +35,13 @@ export default function Navbar() {
       >
           <ul>
             <li>
-              <a href="/">Cronograma</a>
+              <a href="/Cronograma">Cronograma</a>
             </li>
             <li>
-              <a href="/">Equipe</a>
+              <a href="/Equipe">Equipe</a>
             </li>
             <li>
-              <a href="/">Metas</a>
+              <a href="/Metas">Metas</a>
             </li>
           </ul>
         </div>
