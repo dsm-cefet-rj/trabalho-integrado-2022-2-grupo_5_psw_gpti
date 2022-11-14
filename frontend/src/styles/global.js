@@ -47,7 +47,7 @@ export default createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 100px 2%;
+    padding: 30px 10%;
 }
 
 .homeEquipe{
@@ -56,7 +56,7 @@ export default createGlobalStyle`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 2%;
+  padding: 30px 10%;
 }
 
 .homeMetas{
@@ -65,7 +65,7 @@ export default createGlobalStyle`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 100px 2%;
+  padding: 30px 10%;
 }
 .home-text{
     max-width: 100%;
