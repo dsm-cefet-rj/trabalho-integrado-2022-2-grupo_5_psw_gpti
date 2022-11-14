@@ -6,10 +6,10 @@ function Home() {
     <div>
       <div className="container">
         <main>
-          <section class="home">
-            <div class="home-text">
-              <h4 class="text-h4">Bem vindo a YouR TeaM</h4>
-              <h1 class="text-h1">Gerencie sua Equipe de E-sports</h1>
+          <section className='home'>
+            <div className='home-text'>
+              <h4 className='text-h4'>Bem vindo a YouR TeaM</h4>
+              <h1 className='text-h1'>Gerencie sua Equipe de E-sports</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
                 error veniam in voluptatem magni quisquam
@@ -17,12 +17,12 @@ function Home() {
             </div>
           </section>
           <section>
-            <div class="services-container">
-              <div class="service-box">
-                <div class="service-title" id="gerenciamento-box">
+            <div className='services-container'>
+              <div className='service-box'>
+                <div className='service-title' id="gerenciamento-box">
                   <p>Gerenciamento de Eventos</p>
                 </div>
-                <div class="service-description">
+                <div className='service-description'>
                   <h3 id="gerenciamento-title">Cronograma</h3>
                   <p>
                     Adicione no cronograma do YouR TeaM, eventos que sua equipe
@@ -31,20 +31,20 @@ function Home() {
                   </p>
                 </div>
               </div>
-              <div class="service-box">
-                <div class="service-title" id="dev-box">
+              <div className='service-box'>
+                <div className='service-title' id="dev-box">
                   <p>Gerenciamento de Equipe</p>
                 </div>
-                <div class="service-description">
+                <div className='service-description'>
                   <h3 id="dev-title">Equipe</h3>
                   <p>Adicione, remova e edite membros da sua equipe.</p>
                 </div>
               </div>
-              <div class="service-box">
-                <div class="service-title" id="design-box">
+              <div className='service-box'>
+                <div className='service-title' id="design-box">
                   <p>Relatório de Estatísticas</p>
                 </div>
-                <div class="service-description">
+                <div className='service-description'>
                   <h3 id="design-title">Metas</h3>
                   <p>
                     Crie metas de desempenho para sua equipe, como vitórias,
@@ -57,27 +57,27 @@ function Home() {
             </div>
           </section>
 
-          <div class="footer-container">
+          <div className='footer-container'>
             <section>
-              <div class="about-container">
-                <div class="about-card">
-                  <i class="fas fa-server"></i>
+              <div className='about-container'>
+                <div className='about-card'>
+                  <i className='fas fa-server'></i>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Etiam iaculis suscipit ligula et imperdiet. Nunc vulputate
                     mattis lacus, eu lobortis ipsum porta sed.
                   </p>
                 </div>
-                <div class="about-card middle-card">
-                  <i class="fas fa-briefcase"></i>
+                <div className='about-card middle-card'>
+                  <i className='fas fa-briefcase'></i>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Etiam iaculis suscipit ligula et imperdiet. Nunc vulputate
                     mattis lacus, eu lobortis ipsum porta sed.
                   </p>
                 </div>
-                <div class="about-card">
-                  <i class="fas fa-tablet-alt"></i>
+                <div className='about-card'>
+                  <i className='fas fa-tablet-alt'></i>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Etiam iaculis suscipit ligula et imperdiet. Nunc vulputate
@@ -88,7 +88,7 @@ function Home() {
             </section>
 
             <footer>
-              <div class="form-container">
+              <div className='form-container'>
                 <form action="">
                   <input type="text" name="name" id="name" placeholder="Nome" />
                   <input
@@ -105,7 +105,7 @@ function Home() {
                   <input type="submit" class="submit" value="Enviar" />
                 </form>
               </div>
-              <div class="copyright">
+              <div className='copyright'>
                 <p>Copyright 2022 - YourTeam</p>
               </div>
             </footer>
