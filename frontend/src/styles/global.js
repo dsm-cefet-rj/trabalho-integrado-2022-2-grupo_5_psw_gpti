@@ -67,6 +67,15 @@ export default createGlobalStyle`
   justify-content: space-between;
   padding: 30px 10%;
 }
+
+.homeNotFound{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
 .home-text{
     max-width: 100%;
 }

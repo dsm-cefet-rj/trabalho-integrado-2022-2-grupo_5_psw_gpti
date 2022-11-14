@@ -4,7 +4,7 @@ import GlobalStyle from "../styles/global";
 function NotFound (){
     return (
   <main>
-    <section class="homeCronograma">
+    <section class="homeNotFound">
       <div class="home-text">
         <h4 class="text-h4">Error 404: Page not Found</h4>
         <h1 class="text-h1">Ops! Página não encontrada.</h1>
