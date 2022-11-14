@@ -1,6 +1,6 @@
 import GlobalStyle from "../../styles/global";
 
-function Equipe() {
+function Metas() {
   return (
     <main>
       <section class="homeEquipe">
@@ -17,4 +17,4 @@ function Equipe() {
     </main>
   );
 }
-export default Equipe;
+export default Metas;
