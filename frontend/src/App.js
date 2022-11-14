@@ -1,123 +1,19 @@
-import React from "react";
-import Navbar from "./components/Navbar";
-import GlobalStyle from './styles/global';
+import Navbar from "./components/Navbar"
+import Home from "./Home"
+import "./styles/global"
+
+import { Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <div>
-     <Navbar/>
+    <>
+      <Navbar />
       <div className="container">
-      <main>
-	  <section class="home">
-		<div class="home-text">
-		  <h4 class="text-h4">Bem vindo a YouR TeaM</h4>
-		  <h1 class="text-h1">Gerencie sua Equipe de E-sports</h1>
-		  <p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod error
-			veniam in voluptatem magni quisquam
-		  </p>
-
-		</div>
-	  </section>
-	  <section>
-		<div class="services-container">
-		  <div class="service-box">
-			<div class="service-title" id="gerenciamento-box">
-			  <p>Gerenciamento de Eventos</p>
-			</div>
-			<div class="service-description">
-			  <h3 id="gerenciamento-title">Cronograma</h3>
-			  <p>
-				Adicione no cronograma do YouR TeaM, eventos que sua equipe de
-				E-sports está envolvida, como Campeonatos, Treinos, WorkShops e
-				muito mais!
-			  </p>
-			</div>
-		  </div>
-		  <div class="service-box">
-			<div class="service-title" id="dev-box">
-			  <p>Gerenciamento de Equipe</p>
-			</div>
-			<div class="service-description">
-			  <h3 id="dev-title">Equipe</h3>
-			  <p>Adicione, remova e edite membros da sua equipe.</p>
-			</div>
-		  </div>
-		  <div class="service-box">
-			<div class="service-title" id="design-box">
-			  <p>Relatório de Estatísticas</p>
-			</div>
-			<div class="service-description">
-			  <h3 id="design-title">Metas</h3>
-			  <p>
-				Crie metas de desempenho para sua equipe, como vitórias,
-				campeonatos vencidos, menos mortes numa partida e muito mais!
-				Colete um relatório conforme metas forem concluídas para uma
-				ánalise mais aprofundada de desempenho.
-			  </p>
-			</div>
-		  </div>
-		</div>
-	  </section>
-	  
-	  <div class="footer-container">
-		<section>
-		  <div class="about-container">
-			<div class="about-card">
-			  <i class="fas fa-server"></i>
-			  <p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-				iaculis suscipit ligula et imperdiet. Nunc vulputate mattis
-				lacus, eu lobortis ipsum porta sed.
-			  </p>
-			</div>
-			<div class="about-card middle-card">
-			  <i class="fas fa-briefcase"></i>
-			  <p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-				iaculis suscipit ligula et imperdiet. Nunc vulputate mattis
-				lacus, eu lobortis ipsum porta sed.
-			  </p>
-			</div>
-			<div class="about-card">
-			  <i class="fas fa-tablet-alt"></i>
-			  <p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-				iaculis suscipit ligula et imperdiet. Nunc vulputate mattis
-				lacus, eu lobortis ipsum porta sed.
-			  </p>
-			</div>
-		  </div>
-		</section>
-		
-		<footer>
-		  <div class="form-container">
-			<form action="">
-			  <input type="text" name="name" id="name" placeholder="Nome" />
-			  <input
-				type="email"
-				name="email"
-				id="email"
-				placeholder="E-mail"
-			  />
-			  <textarea
-				name="message"
-				id="message"
-				placeholder="Sua mensagem"
-			  ></textarea>
-			  <input type="submit" class="submit" value="Enviar" />
-			</form>
-		  </div>
-		  <div class="copyright">
-			<p>Copyright 2022 - YourTeam</p>
-		  </div>
-		</footer>
-	  </div>
-	</main>
-        <GlobalStyle/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </div>
-    </div>
-  );
+    </>
+  )
 }
-
 export default App;

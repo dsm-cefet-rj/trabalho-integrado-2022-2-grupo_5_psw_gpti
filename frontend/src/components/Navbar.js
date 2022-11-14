@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/navbar.css";
-
+import "../styles/global";
 
 export default function Navbar() {
   const[isNavExpanded, setIsNavExpanded] = useState(false)
