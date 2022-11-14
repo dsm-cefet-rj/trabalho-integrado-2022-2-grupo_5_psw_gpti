@@ -3,7 +3,7 @@ import GlobalStyle from "../../styles/global";
 function Metas() {
   return (
     <main>
-      <section class="homeEquipe">
+      <section class="homeMetas">
         <div class="home-text">
           <h4 class="text-h4">Gere Metas a sua Equipe</h4>
           <h1 class="text-h1">Metas</h1>
