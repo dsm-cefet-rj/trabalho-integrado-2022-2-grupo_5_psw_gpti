@@ -111,7 +111,7 @@ export default createGlobalStyle`
 .service-title p {
   padding-top: 35px;
   color: #FFF;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 24px;
 }
 
