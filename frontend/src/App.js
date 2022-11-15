@@ -17,7 +17,7 @@ function App() {
           <Route path="/Cronograma" element={<Cronograma />} />
           <Route path="/Equipe" element={<Equipe />} />
           <Route path="/Metas" element={<Metas/>} />
-          <Route path ="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </div>
     </>

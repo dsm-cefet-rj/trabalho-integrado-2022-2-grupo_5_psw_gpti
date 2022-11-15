@@ -3,10 +3,10 @@ import GlobalStyle from "../../styles/global";
 function Cronograma() {
   return (
     <main>
-      <section class="homeCronograma">
-        <div class="home-text">
-          <h4 class="text-h4">Gerencie o Cronograma da sua Equipe</h4>
-          <h1 class="text-h1">Cronograma</h1>
+      <section className="homeCronograma">
+        <div className="home-text">
+          <h4 className="text-h4">Gerencie o Cronograma da sua Equipe</h4>
+          <h1 classname="text-h1">Cronograma</h1>
           <p>
             Adicione no cronograma do YouR TeaM, eventos que sua equipe de
             E-sports está envolvida, como Campeonatos, Treinos, WorkShops e
