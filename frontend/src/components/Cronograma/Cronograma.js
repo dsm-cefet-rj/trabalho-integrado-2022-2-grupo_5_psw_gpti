@@ -6,7 +6,7 @@ function Cronograma() {
       <section className="homeCronograma">
         <div className="home-text">
           <h4 className="text-h4">Gerencie o Cronograma da sua Equipe</h4>
-          <h1 classname="text-h1">Cronograma</h1>
+          <h1 className="text-h1">Cronograma</h1>
           <p>
             Adicione no cronograma do YouR TeaM, eventos que sua equipe de
             E-sports está envolvida, como Campeonatos, Treinos, WorkShops e
