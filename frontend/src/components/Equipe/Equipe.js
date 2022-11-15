@@ -13,6 +13,7 @@ function Equipe() {
           </p>
         </div>
       </section>
+      <GlobalStyle />
     </main>
   );
 }
