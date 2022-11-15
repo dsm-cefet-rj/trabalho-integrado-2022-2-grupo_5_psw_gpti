@@ -3,16 +3,16 @@ import GlobalStyle from "../../styles/global";
 
 const Player = (propos) => {
 	return (
-		<div nameClass="PlayerDiv">
-			<div nameClass="Cabecalho">
+		<div ClassName="PlayerDiv">
+			<div ClassName="Cabecalho">
 				<img src="../../public/defaultPlaye.png" /> <u>{propos.player.name}</u>
-				<button nameClass="editPlayer" type="" action="">Editar Dados</button>
-				<button nameClass="removePlayer" type="" action="">Remover da Equipe</button>
+				<button ClassName="editPlayer" type="" action="">Editar Dados</button>
+				<button ClassName="removePlayer" type="" action="">Remover da Equipe</button>
 				<br />
 			</div>
 			<label>Nome:</label>{propos.player.sal}<br />
 			<label>Status:</label>{propos.player.status}<br />
-			<button nameClass="AddTask" type="" action="">Adicionar Meta</button>
+			<button ClassName="AddTask" type="" action="">Adicionar Meta</button>
 		</div>
 	);
 }
