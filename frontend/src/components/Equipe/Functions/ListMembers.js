@@ -14,7 +14,6 @@ export default function ListMembers(props) {
 		setMembros(membros.filter((member) => member.name !== param))
 	}
 
-
 	function handleOnClickAddMember() {
 		setMembros(membros.concat({ name: "Diogo", Salario: 27000, status: "Indisponível", id: 4 }));
 	}
