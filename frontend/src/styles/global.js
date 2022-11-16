@@ -339,5 +339,14 @@ footer {
     width: 50%;
     height: 80%;
     }
+    .home-text .text-h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 4rem;
+  }
+  .home-text .text-h4 {
+    font-size: 1.3rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
   }
 `;
