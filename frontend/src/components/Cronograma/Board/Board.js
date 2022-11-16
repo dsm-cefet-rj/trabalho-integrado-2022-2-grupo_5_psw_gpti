@@ -19,7 +19,10 @@ function Board(props) {
         </p>
         <div
           className="board_header_title_more"
-          onClick={() => setShowDropdown(true)}
+          onClick={(event) => {
+            event.stopPropagation();
+            setShowDropdown(true);
+          }}
         >
           <MoreHorizontal />
           {showDropdown && (
@@ -27,7 +30,7 @@ function Board(props) {
               class="board_dropdown"
               onClose={() => setShowDropdown(false)}
             >
-              <p onClick={() => props.removeBoard()}>Delete Board</p>
+              <p onClick={() => props.removeBoard()}>Deletar Evento</p>
             </Dropdown>
           )}
         </div>
@@ -39,8 +42,6 @@ function Board(props) {
             card={item}
             boardId={props.board.id}
             removeCard={props.removeCard}
-            dragEntered={props.dragEntered}
-            dragEnded={props.dragEnded}
             updateCard={props.updateCard}
           />
         ))}

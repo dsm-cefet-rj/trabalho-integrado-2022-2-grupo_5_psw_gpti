@@ -50,8 +50,6 @@ function Card(props) {
       <div
         className="card"
         draggable
-        onDragEnd={() => props.dragEnded(props.boardId, id)}
-        onDragEnter={() => props.dragEntered(props.boardId, id)}
         onClick={() => trocarMostrarModal(true)}
       >
         <div className="card_top">
@@ -76,7 +74,7 @@ function Card(props) {
                 onClose={() => setShowDropdown(false)}
               >
                 <p onClick={() => props.removeCard(props.boardId, id)}>
-                  Deletar evento
+                  Deletar atividade
                 </p>
               </Dropdown>
             )}

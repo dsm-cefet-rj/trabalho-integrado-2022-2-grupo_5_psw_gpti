@@ -34,7 +34,7 @@
 .board_dropdown {
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.12);
   padding: 20px;
-  width: 150px !important;
+  width: 170px !important;
   cursor: default;
 }
 .board_dropdown p {
