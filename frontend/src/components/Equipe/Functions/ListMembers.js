@@ -1,3 +1,29 @@
+import React, {Component} from "react";
+
+
+export default class ListMembers extends Component {
+
+	constructor(props){
+		super(props);
+		this.state = {
+			membros:[
+				{ name: "Rodrigo", sal: 7000, status: "Disponivel" },
+				{ name: "Bernado", sal: 7000, status: "Indisponivel" },
+				{ name: "Vinicius", sal: 7000, status: "Indisponivel" }
+			]
+		}
+	}
+	render() {
+		return (
+			<>
+				<h3>Lista de Membros</h3>
+				<Members membros={this.state.membros} />
+			</>
+		);
+	}
+
+}
+
 
 function Player(props) {
 	return (
@@ -17,7 +43,6 @@ function Player(props) {
 	);
 }
 
-
 function AddMember() {
 	return (
 		<div className="AddPlayerDiv">
@@ -27,11 +52,11 @@ function AddMember() {
 	);
 }
 
-export default function ListMembers(props) {
+ function Members(props) {
 	return (
 		<>
 			<div className="ListMembers">
-				{props.membros.map((player) => (<Player player={player} key={player} />))}
+				{props.membros.map((player) => (<Player player={player} />))}
 				<AddMember/>
 			</div>
 		</>

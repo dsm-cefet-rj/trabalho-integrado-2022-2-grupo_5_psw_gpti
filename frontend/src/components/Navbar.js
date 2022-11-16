@@ -6,7 +6,7 @@ export default function Navbar() {
   const[isNavExpanded, setIsNavExpanded] = useState(false)
     return (
       <nav className="navigation">
-        <a href="/" class="logo"><span>Y</span>ou<span>R</span> <span>T</span>ea<span>M</span></a>
+        <a href="/" className="logo"><span>Y</span>ou<span>R</span> <span>T</span>ea<span>M</span></a>
 
         <button
         className="hamburger"
