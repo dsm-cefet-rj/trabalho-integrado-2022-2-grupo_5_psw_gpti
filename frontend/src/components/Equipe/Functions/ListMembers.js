@@ -24,7 +24,6 @@ export default class ListMembers extends Component {
 
 }
 
-
 function Player(props) {
 	return (
 		<>
@@ -47,7 +46,7 @@ function AddMember() {
 	return (
 		<div className="AddPlayerDiv">
 			<label>Novo Membro</label><br/>
-			<button>Adiconar Membro</button>
+			<button onClick={()=>alert("Membro criado")}>Adiconar Membro</button>
 		</div>
 	);
 }
