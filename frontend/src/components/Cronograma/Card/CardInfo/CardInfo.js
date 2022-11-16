@@ -113,6 +113,7 @@ function CardInfo(props) {
 
   useEffect(() => {
     if (props.updateCard) props.updateCard(props.boardId, values.id, values);
+    // eslint-disable-next-line
   }, [values]);
 
   return (
