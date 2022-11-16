@@ -5,11 +5,11 @@
   .custom-scroll::-webkit-scrollbar-thumb {
     border-radius: 50px;
     border: 1px solid #ccc;
-    background-color: #fff;
+    background-color: #9161dd;
   }
   
   .custom-scroll::-webkit-scrollbar-thumb:hover {
-    border: 1px solid gray;
+    border: 1px solid black;
   }
   
   .app {
