@@ -1,0 +1,15 @@
+.PlayerDiv{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    padding-top: 20px;
+  }
+  
+  .Cabecalho{
+    height: 100%;
+    width: fit-content;
+    padding: 10px 30px;
+    display: flex;
+    gap: 30px;
+  }

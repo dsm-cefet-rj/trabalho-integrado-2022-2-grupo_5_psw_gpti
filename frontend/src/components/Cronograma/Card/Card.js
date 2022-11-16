@@ -47,11 +47,7 @@ function Card(props) {
           updateCard={props.updateCard}
         />
       )}
-      <div
-        className="card"
-        draggable
-        onClick={() => trocarMostrarModal(true)}
-      >
+      <div className="card" draggable onClick={() => trocarMostrarModal(true)}>
         <div className="card_top">
           <div className="card_top_labels">
             {labels?.map((item, index) => (

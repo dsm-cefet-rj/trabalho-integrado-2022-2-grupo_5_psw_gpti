@@ -203,7 +203,8 @@ function CardInfo(props) {
               className="cardinfo_box_progress"
               style={{
                 width: `${porcentagemConcluida()}%`,
-                backgroundColor: porcentagemConcluida() === 100 ? "limegreen" : "",
+                backgroundColor:
+                  porcentagemConcluida() === 100 ? "limegreen" : "",
               }}
             />
           </div>

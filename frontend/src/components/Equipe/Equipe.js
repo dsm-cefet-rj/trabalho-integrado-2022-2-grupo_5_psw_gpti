@@ -1,7 +1,6 @@
 import GlobalStyle from "../../styles/global";
 import ListMembers from "./Functions/ListMembers";
 
-
 const Equipe = () => {
   return (
     <main>
@@ -21,7 +20,7 @@ const Equipe = () => {
       <ListMembers />
     </main>
   );
-}
+};
 // const users = [
 //   { name: "Rodrigo", sal: 7000, status: "Disponivel" },
 //   { name: "Bernado", sal: 7000, status: "Indisponivel" },
