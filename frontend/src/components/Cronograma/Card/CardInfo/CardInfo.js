@@ -157,7 +157,6 @@ function CardInfo(props) {
             onChange={(event) => atualizarData(event.target.value)}
           />
         </div>
-
         <div className="cardinfo_box">
           <div className="cardinfo_box_title">
             <Users />

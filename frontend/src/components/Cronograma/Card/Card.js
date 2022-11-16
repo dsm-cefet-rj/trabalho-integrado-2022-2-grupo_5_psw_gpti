@@ -34,7 +34,7 @@ function Card(props) {
 
     const dia = date.getDate();
     const mes = meses[date.getMonth()];
-    return dia + " " + mes;
+    return dia+1 + " " + mes;
   };
 
   return (
