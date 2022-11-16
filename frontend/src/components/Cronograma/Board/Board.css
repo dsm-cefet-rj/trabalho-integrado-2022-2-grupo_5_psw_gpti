@@ -29,8 +29,11 @@
 .board_header_title_more {
   cursor: pointer;
   position: relative;
+  color: #9161dd;
 }
-
+.board_header_title_more p {
+  color: black;
+}
 .board_dropdown {
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.12);
   padding: 20px;

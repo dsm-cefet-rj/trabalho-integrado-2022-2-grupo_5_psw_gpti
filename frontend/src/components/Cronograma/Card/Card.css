@@ -37,8 +37,11 @@
   cursor: pointer;
   opacity: 0;
   transition: 200ms;
+  color: #9161dd;
 }
-
+.card_top_more p {
+  color: black;
+}
 .card:hover .card_top_more {
   opacity: 1;
 }
