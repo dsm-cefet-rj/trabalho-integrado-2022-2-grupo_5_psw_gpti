@@ -7,7 +7,7 @@ import "./Card.css";
 import CardInfo from "./CardInfo/CardInfo";
 
 function Card(props) {
-  const [mostrarSuspensao, trocarMostrarSuspensao] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [mostrarModal, trocarMostrarModal] = useState(false);
 
   const { id, title, date, tasks, labels } = props.card;
@@ -66,14 +66,14 @@ function Card(props) {
             className="card_top_more"
             onClick={(event) => {
               event.stopPropagation();
-              trocarMostrarSuspensao(true);
+              setShowDropdown(true);
             }}
           >
             <MoreHorizontal />
-            {mostrarSuspensao && (
+            {showDropdown && (
               <Dropdown
                 class="board_dropdown"
-                onClose={() => trocarMostrarSuspensao(false)}
+                onClose={() => setShowDropdown(false)}
               >
                 <p onClick={() => props.removeCard(props.boardId, id)}>
                   Deletar evento
