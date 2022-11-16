@@ -6,25 +6,25 @@ export default class ListMembers extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			membros:[
-				{ name: "Rodrigo", sal: 7000, status: "Disponivel" },
-				{ name: "Bernado", sal: 7000, status: "Indisponivel" },
-				{ name: "Vinicius", sal: 7000, status: "Indisponivel" }
+			membros: [
+				{ name: "Rodrigo", sal: 7000, status: "Disponivel", num: 1 },
+				{ name: "Bernado", sal: 7000, status: "Indisponivel", num: 2 },
+				{ name: "Vinicius", sal: 7000, status: "Indisponivel", num: 3 }
 			]
-		}
+		};
 	}
+	
 	render() {
 		return (
 			<>
 				<h3>Lista de Membros</h3>
 				<div className="MembersList">
 					<Members membros={this.state.membros} />
-					<AddMember/>
+					<AddMember />
 				</div>
 			</>
 		);
 	}
-
 }
 
 function Player(props) {
@@ -32,7 +32,7 @@ function Player(props) {
 		<>
 			<div className="PlayerDiv">
 				<div className="Cabecalho">
-					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px"/> <u>{props.player.name}</u>
+					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px"/> <b><u>{props.player.name}</u></b>
 					<button className="editPlayer" type="" action="">Editar Dados</button>
 					<button className="removePlayer" type="" action="">Remover da Equipe</button>
 				</div>
@@ -45,10 +45,11 @@ function Player(props) {
 	);
 }
 
- function Members(props) {
+function Members(props) {
 	return (
 			<div className="ListMembers">
- 				{props.membros.map((player) => (<Player player={player} />))}
+			{props.membros.map((player) => (<Player player={player} key={player.num} />))}
+				{/* <AddMember/> */}
 			</div>
 	);
 }
@@ -61,3 +62,4 @@ function AddMember() {
 		</div>
 	);
 }
+
