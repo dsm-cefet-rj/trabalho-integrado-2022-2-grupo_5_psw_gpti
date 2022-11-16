@@ -10,7 +10,7 @@ function Cronograma() {
   const [boards, setBoards] = useState(
     JSON.parse(localStorage.getItem("yourteam-mock")) || []
   );
- 
+
   const addboardHandler = (name) => {
     const tempBoards = [...boards];
     tempBoards.push({
@@ -80,7 +80,7 @@ function Cronograma() {
   //localStorage.clear();
   return (
     <main>
-       <section className="homeCronograma">
+      <section className="homeCronograma">
         <div className="home-text">
           <h4 className="text-h4">Gerencie o Cronograma da sua Equipe</h4>
           <h1 className="text-h1">Cronograma</h1>
@@ -90,8 +90,8 @@ function Cronograma() {
             muito mais! Insira um evento abaixo com sua descrição e horário em
             que ocorrerá.
           </p>
-          </div>
-        </section>
+        </div>
+      </section>
       <div className="app_boards_container">
         <div className="app_boards">
           {boards.map((item) => (
