@@ -1,6 +1,14 @@
 import GlobalStyle from "../../styles/global";
+import ListMembers from "./Functions/ListMembers";
 
-function Equipe() {
+
+const users = [
+  { name: "Rodrigo", sal: 5000, status: "Disponivel" },
+  { name: "Bernado", sal: 10000, status: "Indisponivel" },
+  { name: "Vinicius", sal: 7000, status: "Indisponivel" },
+];
+
+const Equipe = () =>   {
   return (
     <main>
       <section className="homeEquipe">
@@ -14,6 +22,11 @@ function Equipe() {
         </div>
       </section>
       <GlobalStyle />
+
+
+      <ListMembers membros={users} />
+
+
     </main>
   );
 }
