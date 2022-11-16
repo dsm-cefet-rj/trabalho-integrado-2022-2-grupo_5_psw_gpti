@@ -15,8 +15,6 @@ const Equipe = () => {
         </div>
       </section>
       <GlobalStyle />
-
-      <h3>Membros da Equipe</h3>
       <ListMembers />
     </main>
   );
