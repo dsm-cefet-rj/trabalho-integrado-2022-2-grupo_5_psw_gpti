@@ -17,11 +17,13 @@ export default class ListMembers extends Component {
 		return (
 			<>
 				<h3>Lista de Membros</h3>
-				<Members membros={this.state.membros} />
+				<div className="MembersList">
+					<Members membros={this.state.membros} />
+					<AddMember/>
+				</div>
 			</>
 		);
 	}
-
 }
 
 function Player(props) {
@@ -29,7 +31,7 @@ function Player(props) {
 		<>
 			<div className="PlayerDiv">
 				<div className="Cabecalho">
-					<img src="public/defaultPlayer.png" alt="img" width="125px" height="125px"/> <u>{props.player.name}</u>
+					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px"/> <u>{props.player.name}</u>
 					<button className="editPlayer" type="" action="">Editar Dados</button>
 					<button className="removePlayer" type="" action="">Remover da Equipe</button>
 				</div>
@@ -42,6 +44,14 @@ function Player(props) {
 	);
 }
 
+function Members(props) {
+	return (
+			<div className="ListMembers">
+				{props.membros.map((player) => (<Player player={player} />))}
+			</div>
+	);
+}
+
 function AddMember() {
 	return (
 		<div className="AddPlayerDiv">
@@ -51,13 +61,3 @@ function AddMember() {
 	);
 }
 
- function Members(props) {
-	return (
-		<>
-			<div className="ListMembers">
-				{props.membros.map((player) => (<Player player={player} />))}
-				<AddMember/>
-			</div>
-		</>
-	);
-}
