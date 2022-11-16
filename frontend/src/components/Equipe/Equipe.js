@@ -3,12 +3,12 @@ import ListMembers from "./Functions/ListMembers";
 
 
 const users = [
-  { name: "Rodrigo", sal: 5000, status: "Disponivel" },
-  { name: "Bernado", sal: 10000, status: "Indisponivel" },
+  { name: "Rodrigo", sal: 7000, status: "Disponivel" },
+  { name: "Bernado", sal: 7000, status: "Indisponivel" },
   { name: "Vinicius", sal: 7000, status: "Indisponivel" },
 ];
 
-const Equipe = () =>   {
+const Equipe = () => {
   return (
     <main>
       <section className="homeEquipe">
@@ -22,11 +22,7 @@ const Equipe = () =>   {
         </div>
       </section>
       <GlobalStyle />
-
-
       <ListMembers membros={users} />
-
-
     </main>
   );
 }
