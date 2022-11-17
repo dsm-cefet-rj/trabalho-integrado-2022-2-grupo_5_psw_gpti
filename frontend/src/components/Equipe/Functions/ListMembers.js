@@ -3,15 +3,10 @@ import React, {useState} from "react";
 
 export default function ListMembers(props) {
 
-	const [membros, setMembros] = useState([
-		{ name: "Rodrigo", sal: 7000, status: "Disponivel", id: 1 },
-		{ name: "Bernado", sal: 7000, status: "Indisponivel", id: 2 },
-		{ name: "Vinicius", sal: 7000, status: "Indisponivel", id: 3 }
-	]
-	);
+	const [membros, setMembros] = useState([]);
 
 	function handleOnClickRemoveMember(param) {
-		setMembros(membros.filter((member) => member.name !== param))
+		setMembros(membros.filter((member) => member.id !== param))
 	}
 
 	function handleOnClickAddMember() {
@@ -37,7 +32,7 @@ function Player(props) {
 				<div className="Cabecalho">
 					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px" /> <b><u>{props.player.name}</u></b>
 					<button className="editPlayer" onClick={()=>{}}>Editar Dados</button>
-					<button className="removePlayer" onClick={() => props.onClickRemoveMember(props.player.name)}>Remover da Equipe</button>
+					<button className="removePlayer" onClick={() => props.onClickRemoveMember(props.key)}>Remover da Equipe</button>
 				</div>
 				<label>Nome:</label>{props.player.sal}<br />
 				<label>Status:</label>{props.player.status}<br />
@@ -57,14 +52,18 @@ function Members(props) {
 	);
 }
 
+function createModal(props) {
+	
+}
+
 function AddMember(props) {
 	return (
 		<div className="AddPlayerDiv">
 			<label>Novo Membro</label><br />
-			<button onClick={() => props.onClickAddMember()}>Adiconar Membro</button>
+			{/* Create modal */}
+			<button>Adiconar Membro</button>
 		</div>
 	);
 }
-
 
 
