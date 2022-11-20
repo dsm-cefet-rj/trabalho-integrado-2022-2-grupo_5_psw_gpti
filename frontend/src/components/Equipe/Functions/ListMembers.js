@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 
-
 export default function ListMembers(props) {
 
 	const [membros, setMembros] = useState([]);
@@ -9,21 +8,14 @@ export default function ListMembers(props) {
 		setMembros(membros.filter((member) => member.id !== param))
 	}
 
-	function handleOnClickAddMember() {
-		setMembros(membros.concat({ name: "Diogo", Salario: 27000, status: "Indisponível", id: 4 }));
-	}
-
 	return (
 		<>
-			<h3>Lista de Membros</h3>
 			<div className="MembersList">
 				<Members membros={membros} onClickRemoveMember={handleOnClickRemoveMember} />
 			</div>
-			<AddMember onClickAddMember={handleOnClickAddMember} />
 		</>
 	);
 }
-
 
 function Player(props) {
 	return (
@@ -47,23 +39,6 @@ function Members(props) {
 	return (
 		<div className="ListMembers">
 			{props.membros.map((player) => (<Player player={player} key={player.id} onClickRemoveMember={props.onClickRemoveMember} />))}
-			{/* <AddMember/> */}
 		</div>
 	);
 }
-
-function createModal(props) {
-	
-}
-
-function AddMember(props) {
-	return (
-		<div className="AddPlayerDiv">
-			<label>Novo Membro</label><br />
-			{/* Create modal */}
-			<button>Adiconar Membro</button>
-		</div>
-	);
-}
-
-

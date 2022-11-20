@@ -1,27 +1,36 @@
 import GlobalStyle from "../../styles/global";
 import ListMembers from "./Functions/ListMembers";
-
+import {AddMember} from "./Functions/Modal/Modal"
 
 const Equipe = () => {
-  return (
-    <main>
-      <section className="homeEquipe">
-        <div className="home-text">
-          <h4 className="text-h4">Gerencie sua Equipe</h4>
-          <h1 className="text-h1">Equipe</h1>
-          <p>
-            Crie e adicione membros à sua equipe. Podendo promove-los a capitão
-            ou removê-los.
-          </p>
-        </div>
-      </section>
-      <GlobalStyle />
+	return (
+		<main>
+			<GlobalStyle />
+			<section className="homeEquipe">
+				<div className="home-text">
+					<h4 className="text-h4">Gerencie sua Equipe</h4>
+					<h1 className="text-h1">Equipe</h1>
+					<p>
+						Crie e adicione membros à sua equipe. Podendo promove-los a capitão
+						ou removê-los.
+					</p>
+				</div>
+			</section>
 
-      <h3>Membros da Equipe</h3>
-      <ListMembers />
-    </main>
-  );
+			<div className="list-members">
+				<h3>Membros da Equipe</h3>
+				<ListMembers />
+			</div>
+			<AddMember/>
+
+
+		</main>
+	);
 }
+
+
+
+
 // const users = [
 //   { name: "Rodrigo", sal: 7000, status: "Disponivel" },
 //   { name: "Bernado", sal: 7000, status: "Indisponivel" },
