@@ -1,46 +1,51 @@
-import React, {useState} from "react";
-import "./Modal.css"
-import MemberForm from "./../MemberForm"
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
-export default function Modal(props) {
-	
-	const [modalState, setIsOpen] = useState(false);
+export default function Modal() {
+  const [open, setOpen] = React.useState(false);
 
-	// function openModal() {
-	// 	setIsOpen(true);
-	// }
+  const handleClickOpen = () => {
+	setOpen(true);
+  };
 
-	// function closeModal() {
-	// 	setIsOpen(false);
-	// }
+  const handleClose = () => {
+	setOpen(false);
+  };
 
-	
-
-	return (
-		<>
-			<div className="modal">
-				<div className="modal-content">
-					<div className="modal-header">
-						<h4 className="modal-title">Adicionar Novo Integrante</h4><button >X</button>
-					</div>
-					<div className="modal-body">
-						<MemberForm />
-					</div>
-					{/*div className="modal-footer">
-					</div> */}
-				</div>
-			</div>
-		</>
-	);
-}
-
-export function AddMember(props) {
-
-	return (
-		<div className="AddPlayerDiv">
-			<Modal show={true}/>
-			<label>Novo Membro</label> <button onClick={() => alert("Usuario add")}>Adicionar Membro</button>
-		</div>
-	);
+  return (
+	<div>
+	  <Button variant="outlined" onClick={handleClickOpen}>
+		Adicionar Membros
+	  </Button>
+	  <Dialog open={open} onClose={handleClose}>
+		<DialogTitle>Adicionar Novo Integrante
+		  <Button onClick={handleClose}>X</Button></DialogTitle>
+		<DialogContent>
+		  <DialogContentText>
+			To subscribe to this website, please enter your email address here. We
+			will send updates occasionally.
+		  </DialogContentText>
+		  <TextField
+			autoFocus
+			margin="dense"
+			label="Email Address"
+			type="email"
+			fullWidth
+			variant="standard"
+		  />
+		</DialogContent>
+		<DialogActions>
+		  <Button onClick={handleClose}>Cancel</Button>
+		  <Button onClick={handleClose}>Subscribe</Button>
+		</DialogActions>
+	  </Dialog>
+	</div>
+  );
 }
