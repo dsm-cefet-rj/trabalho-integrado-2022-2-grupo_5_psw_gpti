@@ -23,12 +23,12 @@ function Player(props) {
 			<div className="PlayerDiv">
 				<div className="Cabecalho">
 					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px" /> <b><u>{props.player.name}</u></b>
-					<button className="editPlayer" onClick={()=>{}}>Editar Dados</button>
+					<button className="editPlayer" onClick={() => {}}>Editar Dados</button>
 					<button className="removePlayer" onClick={() => props.onClickRemoveMember(props.key)}>Remover da Equipe</button>
 				</div>
 				<label>Nome:</label>{props.player.sal}<br />
 				<label>Status:</label>{props.player.status}<br />
-				<button className="AddTask" onClick={()=>{}}>Adicionar Meta</button>
+				<button className="AddTask" onClick={() => {}}>Adicionar Meta</button>
 			</div>
 			<br />
 		</>
