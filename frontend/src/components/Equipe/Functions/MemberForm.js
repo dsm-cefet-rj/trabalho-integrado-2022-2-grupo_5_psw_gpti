@@ -1,42 +1,47 @@
 import React, { useState } from "react";
+
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 // import "./styles/form.css"
 export default function MemberForm() {
 
 
 	const [nome, setNome] = useState("");
 	const [salario, setSalario] = useState(0);
+
+	const handleUpdtName = (props) => {
+
+		setNome(props);
+	}
+	const handleUpdtSalario = (props) => {
+
+		setSalario(props);
+	}
 	
-	const [newMember, UpdateMember] = useState({
-		nome: nome,
-		salario: salario
-	});
-
-
-	function handleUpdtName(props) {
-
-		// setNome();
-		// UpdateMember();
-	}
-	function handleUpdtSalario(props) {
-
-		// setSalario();
-		// UpdateMember();
-	}
-	function handleSubmitMember() {
-		// Enviar objeto newMember para adição no componente ListMembers
-	}
-
 	return (
 		<>
-			<form action="">
-				<label htmlFor="nick">Nome do Integrante: </label>
-				<input onChange={() => handleUpdtName()} name="nick" className="nickname-input" type="text" required></input><br />
-				<label htmlFor="salario">Salario Inicial: </label>
-				<input onChange={() => handleUpdtSalario()} name="salario" className="salario-input" type="number" placeholder="R$" required></input><br />
+			{/* <label htmlFor="nick">Integrante:</label> */}
+			<TextField onChange={(newName) => handleUpdtName(newName.target.value)}
+				label="Nome"
+				name="nick"
+				className="nickname-input"
+				placeholder="Nickname - Ex: 'Xaolin Matador de Porco'"
+				variant="standard"
+			/>
+			<br />
 
-				<button type="submit" onClick={() => handleSubmitMember()}>Cadastrar Membro</button> 
-				<button type="reset">Limpar</button>
-			</form>
+			{/* <label htmlFor="salario">Salario Inicial: </label> */}
+			<TextField
+				onChange={(newSal) => handleUpdtSalario(newSal.target.value)}
+				inputProps={{ inputMode: 'numeric', pattern: '[0-9]*', min: 1200, increment: 0.1 }}
+				type="number"
+				placeholder="R$ XXXX.XX"
+				variant="standard"
+				name="salario"
+				className="salario-input"
+			/>
+			<br />
 		</>
 	);
 }
