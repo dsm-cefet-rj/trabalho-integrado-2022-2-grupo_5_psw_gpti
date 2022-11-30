@@ -30,8 +30,8 @@ export default function Modal() {
 				</DialogContent>
 
 				<DialogActions>
-					<Button onClick={handleClose}>Subscribe</Button>
-					<Button onClick={handleClose}>Cancel</Button>
+					<Button onClick={handleClose}>Adicionar</Button>
+					<Button onClick={handleClose}>Cancelar</Button>
 				</DialogActions>
 			</Dialog>
 		</div>
