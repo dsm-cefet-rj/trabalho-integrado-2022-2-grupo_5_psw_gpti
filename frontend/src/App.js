@@ -6,8 +6,24 @@ import { Route, Routes } from "react-router-dom";
 import Equipe from "./components/Equipe/Equipe";
 import Metas from "./components/Metas/Metas";
 import NotFound from "./components/NotFound";
+import { Component } from "react";
 
-function App() {
+class App extends Component() {
+  constructor(props) {
+    super(props);
+    this.state = { apiResponse: "" };
+}
+
+callAPI() {
+    fetch("http://localhost:9000/Cronograma")
+        .then(res => res.text())
+        .then(res => this.setState({ apiResponse: res }));
+}
+
+componentWillMount() {
+    this.callAPI();
+}
+ render(){
   return (
     <>
       <Navbar />
@@ -22,5 +38,6 @@ function App() {
       </div>
     </>
   );
+ } 
 }
 export default App;
