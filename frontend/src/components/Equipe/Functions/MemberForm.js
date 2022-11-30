@@ -4,19 +4,20 @@ import React, { useState } from "react";
 import TextField from '@mui/material/TextField';
 
 // import "./styles/form.css"
-export default function MemberForm() {
+export default function MemberForm({formMember, setFormMember}) {
 
-
-	const [nome, setNome] = useState("");
-	const [salario, setSalario] = useState(0);
 
 	const handleUpdtName = (props) => {
-
-		setNome(props);
+		setFormMember({
+			name: props,
+			sal: formMember.sal
+		})
 	}
 	const handleUpdtSalario = (props) => {
-
-		setSalario(props);
+		setFormMember({
+			name: formMember.name,
+			sal: props
+		})
 	}
 	
 	return (
@@ -26,8 +27,9 @@ export default function MemberForm() {
 				label="Nome"
 				name="nick"
 				className="nickname-input"
-				placeholder="Nickname - Ex: 'Xaolin Matador de Porco'"
+				placeholder="Nickname - Ex: "
 				variant="standard"
+				value={formMember.name}
 			/>
 			<br />
 
@@ -40,6 +42,7 @@ export default function MemberForm() {
 				variant="standard"
 				name="salario"
 				className="salario-input"
+				value={formMember.sal}
 			/>
 			<br />
 		</>

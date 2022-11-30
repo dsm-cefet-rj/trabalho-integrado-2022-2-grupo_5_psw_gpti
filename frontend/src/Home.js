@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GlobalStyle from "./styles/global";
 
 function Home() {
+
+  const callAPI = async () => {
+    return fetch("http://localhost:9000/");
+  }
+
+  useEffect(() => {
+    const f = async () => {
+      let r = await callAPI();
+      console.log(r);
+    };
+    f();
+
+		//localStorage.setItem("yourteam-mock", JSON.stringify(boards));
+	}, []);
+
   return (
     <div>
       <div className="container">

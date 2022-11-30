@@ -8,8 +8,12 @@ import MemberForm from "./../MemberForm"
 // import TextField from '@mui/material/TextField';
 // import DialogContentText from '@mui/material/DialogContentText';
 
-export default function Modal() {
+export default function Modal({membros, setMembros}) {
 	const [open, setOpen] = useState(false);
+	const [formMember, setFormMember] = useState({
+		name: '',
+		sal: 0
+	});
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -19,6 +23,14 @@ export default function Modal() {
 		setOpen(false);
 	};
 
+	const handleSave = () => {
+		console.log([...membros, formMember]);
+		setMembros([...membros, formMember]);
+		setOpen(false);
+	};
+
+	
+
 	return (
 		<div>
 			<Button variant="outlined" onClick={handleClickOpen}>Adicionar Membros</Button>
@@ -26,11 +38,11 @@ export default function Modal() {
 			<Dialog open={open} onClose={handleClose}>
 				<DialogTitle>Adicionar Novo Integrante</DialogTitle>
 				<DialogContent>
-					<MemberForm/>
+					<MemberForm formMember={formMember} setFormMember={setFormMember} />
 				</DialogContent>
 
 				<DialogActions>
-					<Button onClick={handleClose}>Adicionar</Button>
+					<Button onClick={handleSave}>Adicionar</Button>
 					<Button onClick={handleClose}>Cancelar</Button>
 				</DialogActions>
 			</Dialog>

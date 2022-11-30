@@ -1,11 +1,17 @@
 import React, {useState} from "react";
+import Modal from "./Modal/Modal"
 
 export default function ListMembers(props) {
 
-	const [membros, setMembros] = useState([]);
+	const [membros, setMembros] = useState([
+		{key: 1,name: "osvaldo",sal: 1250, status: "Disponível"},
+		{key: 2, name: "osvaldin",sal: 1250, status: "Disponível"},
+		{key: 3,name: "osvaldaço",sal: 1250, status: "Disponível"},
+		{key: 4,name: "osvaldao",sal: 1250, status: "Disponível"},
+	]);
 
 	function handleOnClickRemoveMember(param) {
-		setMembros(membros.filter((member) => member.id !== param))
+		setMembros(membros.filter((member) => member.key !== param))
 	}
 
 	return (
@@ -13,6 +19,7 @@ export default function ListMembers(props) {
 			<div className="MembersList">
 				<Members membros={membros} onClickRemoveMember={handleOnClickRemoveMember} />
 			</div>
+			<Modal membros={membros} setMembros={setMembros}/>
 		</>
 	);
 }
@@ -22,9 +29,9 @@ function Player(props) {
 		<>
 			<div className="PlayerDiv">
 				<div className="Cabecalho">
-					<img src="../../../../public/defaultPlayer.png" alt="img" width="125px" height="125px" /> <b><u>{props.player.name}</u></b>
-					<button className="editPlayer" onClick={() => {}}>Editar Dados</button>
-					<button className="removePlayer" onClick={() => props.onClickRemoveMember(props.key)}>Remover da Equipe</button>
+					<img src="../../../../public/defaultPlayer.png" alt="img" wkeyth="225px" height="225px" /> <b><u>{props.player.name}</u></b>
+					<button className="editPlayer" onClick={() => {}}>Editar</button>
+					<button className="removePlayer" onClick={() => props.onClickRemoveMember(props.player.key)}>Remover</button>
 				</div>
 				<label>Nome:</label>{props.player.sal}<br />
 				<label>Status:</label>{props.player.status}<br />
@@ -38,7 +45,7 @@ function Player(props) {
 function Members(props) {
 	return (
 		<div className="ListMembers">
-			{props.membros.map((player) => (<Player player={player} key={player.id} onClickRemoveMember={props.onClickRemoveMember} />))}
+			{props.membros.map((player) => (<Player player={player} key={player.key} onClickRemoveMember={props.onClickRemoveMember} />))}
 		</div>
 	);
 }

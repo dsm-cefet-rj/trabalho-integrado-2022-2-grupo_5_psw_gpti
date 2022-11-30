@@ -1,6 +1,6 @@
 import GlobalStyle from "../../styles/global";
 import ListMembers from "./Functions/ListMembers";
-import Modal from "./Functions/Modal/Modal"
+
 
 const Equipe = () => {
 	return (
@@ -21,7 +21,7 @@ const Equipe = () => {
 				<h3>Membros da Equipe</h3>
 				<ListMembers />
 			</div>
-			<Modal/>
+			
 
 
 		</main>

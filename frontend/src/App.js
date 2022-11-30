@@ -8,22 +8,8 @@ import Metas from "./components/Metas/Metas";
 import NotFound from "./components/NotFound";
 import { Component } from "react";
 
-class App extends Component() {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-}
 
-callAPI() {
-    fetch("http://localhost:9000/Cronograma")
-        .then(res => res.text())
-        .then(res => this.setState({ apiResponse: res }));
-}
-
-componentWillMount() {
-    this.callAPI();
-}
- render(){
+ function App() { 
   return (
     <>
       <Navbar />
@@ -39,5 +25,4 @@ componentWillMount() {
     </>
   );
  } 
-}
 export default App;

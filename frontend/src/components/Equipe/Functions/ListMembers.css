@@ -13,3 +13,13 @@
     display: flex;
     gap: 30px;
   }
+
+  .removePlayer{
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    text-align: center;
+  }
+  
