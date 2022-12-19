@@ -1,16 +1,17 @@
 var createError = require("http-errors");
-var express = require("express");
+const express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var cors = require("cors");
+const cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var testAPIRouter = require("./routes/testAPI");
+var CronogramaRouter = require("./routes/Cronograma");
+const app = express();
 
-var app = express();
 
-
+app.use("/api", require("./routes/api"));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
@@ -21,8 +22,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.listen(9000, function(){
+    console.log("server running");
+});
 app.use("/", indexRouter);
-app.use("/testAPI", testAPIRouter);
+app.use("/Cronograma", CronogramaRouter);
 
 
 app.use(function(req, res, next) {

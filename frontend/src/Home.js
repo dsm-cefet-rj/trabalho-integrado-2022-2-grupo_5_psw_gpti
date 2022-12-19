@@ -4,7 +4,7 @@ import GlobalStyle from "./styles/global";
 function Home() {
 
   const callAPI = async () => {
-    return fetch("http://localhost:9000/");
+    return fetch("http://localhost:9000");
   }
 
   useEffect(() => {

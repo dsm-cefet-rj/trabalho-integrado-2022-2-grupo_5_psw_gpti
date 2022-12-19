@@ -76,8 +76,20 @@ function Cronograma() {
 	useEffect(() => {
 		localStorage.setItem("yourteam-mock", JSON.stringify(boards));
 	}, [boards]);
-
-	//localStorage.clear();
+	const callAPI = async () => {
+		return fetch("http://localhost:9000/Cronograma");
+	  }
+	
+	  useEffect(() => {
+		const f = async () => {
+		  let r = await callAPI();
+		  console.log(r);
+		};
+		f();
+	
+			//localStorage.setItem("yourteam-mock", JSON.stringify(boards));
+		}, []);
+	
 	return (
 		<main>
 			<section className="homeCronograma">
