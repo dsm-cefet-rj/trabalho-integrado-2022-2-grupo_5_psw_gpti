@@ -1,12 +1,13 @@
 var createError = require("http-errors");
+var mongoose = require('mongoose')
 const express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
 
+
 var indexRouter = require("./routes/index");
-var testAPIRouter = require("./routes/testAPI");
 var CronogramaRouter = require("./routes/Cronograma");
 const app = express();
 
